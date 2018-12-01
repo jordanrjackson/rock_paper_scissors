@@ -4,9 +4,9 @@ var clickRock = document.getElementById("rock")
 var clickPaper = document.getElementById("paper")
 var clickScissors = document.getElementById("scissors")
 
-var userChoice = rock.addEventListener("click", autoChoice)
-var userChoice = paper.addEventListener("click", autoChoice2)
-var userChoice = scissors.addEventListener("click", autoChoice3)
+rock.addEventListener("click", autoChoice)
+paper.addEventListener("click", autoChoice2)
+scissors.addEventListener("click", autoChoice3)
 
 function autoChoice() {
   var compPick = array[Math.floor(Math.random() * array.length)]
@@ -61,7 +61,7 @@ function compare(userChoice, compPick) {
       }
     }
   if (userChoice === "scissors") {
-    if (compPick === "paper") {
+    if (compPick === "rock") {
       return validateField3()
       return document.getElementById("game").innerHTML = "The computer chose " + `${compPick}` + "! You win!"
     } else {
