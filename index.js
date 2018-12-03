@@ -4,68 +4,50 @@ var clickRock = document.getElementById("rock")
 var clickPaper = document.getElementById("paper")
 var clickScissors = document.getElementById("scissors")
 
-rock.addEventListener("click", autoChoice)
-paper.addEventListener("click", autoChoice2)
-scissors.addEventListener("click", autoChoice3)
+var userChoice = rock.addEventListener("click", autoChoice)
+var userChoice = paper.addEventListener("click", autoChoice2)
+var userChoice = scissors.addEventListener("click", autoChoice3)
 
 function autoChoice() {
-  var compPick = array[Math.floor(Math.random() * array.length)]
+  var compChoice = array[Math.floor(Math.random() * array.length)]
   var userChoice = "rock"
-  compare(userChoice, compPick)
+  compare(userChoice, compChoice)
 }
 function autoChoice2() {
-  var compPick = array[Math.floor(Math.random() * array.length)]
+  var compChoice = array[Math.floor(Math.random() * array.length)]
   var userChoice = "paper"
-  compare(userChoice, compPick)
+  compare(userChoice, compChoice)
 }
 function autoChoice3() {
-  var compPick = array[Math.floor(Math.random() * array.length)]
+  var compChoice = array[Math.floor(Math.random() * array.length)]
   var userChoice = "scissors"
-  compare(userChoice, compPick)
+  compare(userChoice, compChoice)
 }
 
-function validateField() {
-  var docs = document.getElementById("img1")
-  docs.setAttribute("src", "/Users/jordan/Desktop/dpl_course/week4/day5/rock_paper_scissors/rock-50x50.png")
-  docs.style.display = 'block'
-}
-function validateField2() {
-  var docs = document.getElementById("img2")
-  docs.setAttribute("src", "/Users/jordan/Desktop/dpl_course/week4/day5/rock_paper_scissors/paper-50x50.png")
-  docs.style.display = 'block'
-}
-function validateField3() {
-  var docs = document.getElementById("img3")
-  docs.setAttribute("src", "/Users/jordan/Desktop/dpl_course/week4/day5/rock_paper_scissors/scissors-50x50.png")
-  docs.style.display = 'block'
-}
-
-function compare(userChoice, compPick) {
-  if (userChoice === compPick) {
-      return document.getElementById("game").innerHTML = "The computer chose " + `${compPick}` + "!" + " It's a tie!"
+function compare(userChoice, compChoice) {
+  
+  if (userChoice === compChoice) {
+    return document.getElementById("game").innerHTML = "The computer chose " + `${compChoice}` + "!" + " It's a tie!"
   }
   if (userChoice === "rock") {
-    if (compPick === "scissors") {
-      return validateField()
-      return document.getElementById("game").innerHTML = "The computer chose " + `${compPick}` + "! You win!"
+    if (compChoice === "scissors") {
+      return document.getElementById("game").innerHTML = "The computer chose " + `${compChoice}` + "! You win!"
     } else {
-      return document.getElementById("game").innerHTML = "The computer chose " + `${compPick}` + "! You lose!"
+      return document.getElementById("game").innerHTML = "The computer chose " + `${compChoice}` + "! You lose!"
       }
     }
   if (userChoice === "paper") {
-    if (compPick === "rock") {
-      return validateField2()
-      return document.getElementById("game").innerHTML = "The computer chose " + `${compPick}` + "! You win!"
+    if (compChoice === "rock") {
+      return document.getElementById("game").innerHTML = "The computer chose " + `${compChoice}` + "! You win!"
     } else {
-      return document.getElementById("game").innerHTML = "The computer chose " + `${compPick}` + "! You lose!"
+      return document.getElementById("game").innerHTML = "The computer chose " + `${compChoice}` + "! You lose!"
       }
     }
   if (userChoice === "scissors") {
-    if (compPick === "rock") {
-      return validateField3()
-      return document.getElementById("game").innerHTML = "The computer chose " + `${compPick}` + "! You win!"
+    if (compChoice === "paper") {
+      return document.getElementById("game").innerHTML = "The computer chose " + `${compChoice}` + "! You win!"
     } else {
-      return document.getElementById("game").innerHTML = "The computer chose " + `${compPick}` + "! You lose!"
+      return document.getElementById("game").innerHTML = "The computer chose " + `${compChoice}` + "! You lose!"
     }
   }
 }
